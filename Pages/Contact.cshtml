@@ -1,0 +1,23 @@
+@page
+@model dotnet_webpack.Pages.ContactModel
+
+@section Scripts
+{
+<script type="module" src="~/dist/validation.js" defer></script>
+}
+
+<form class="usa-form" method="POST">
+  <div class="form-group">
+    <label class="usa-label" asp-for="Subject"></label>
+    <input class="usa-input" asp-for="Subject" />
+    <span asp-validation-for="Subject" class="usa-error-message"></span>
+  </div>
+
+  <div class="form-group">
+    <label class="usa-label" asp-for="Message"></label>
+    <textarea asp-for="Message" class="usa-input"></textarea>
+    <span asp-validation-for="Message" class="usa-error-message"></span>
+  </div>
+
+  <button class="usa-button" type="submit">Submit</button>
+</form>

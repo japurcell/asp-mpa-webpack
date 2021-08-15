@@ -1,0 +1,5 @@
+@import 'uswds/scss/packages/required';
+
+.print-today__header {
+  @include u-text('emergency');
+}

@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+ViewData["Title"] = "Home page";
+}
+
+@section Styles {
+<link rel="stylesheet" href="~/dist/print-today.css">
+}
+
+<section class="usa-section">
+  <div class="print-today"></div>
+</section>
+
+@section Scripts {
+<script type="module" src="~/dist/print-today.js" defer></script>
+}
