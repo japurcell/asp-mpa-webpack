@@ -21,8 +21,8 @@
   </ItemGroup>
 
 
-  <Target Name="NodeInstall" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(MpaRoot)node_modules') ">
-    <Exec Command="node --version" ContinueOnError="true">
+  <!-- <Target Name="NodeInstall" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(MpaRoot)node_modules') ">
+    <Exec Command="node -v" ContinueOnError="true">
         <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/."/>
@@ -30,15 +30,13 @@
     <Exec Command="yarn -v" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
     </Exec>
-    <Error Condition="'$(ErrorCode)' != '0'" Text="Yarn is required to build and run this project. To continue, please install: 'npm install --global yarn'"/>
-  </Target>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Yarn is required to build and run this project. To continue, please install: 'npm install -g yarn'"/>
+  </Target> -->
 
-  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+  <!-- <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <Exec WorkingDirectory="$(MpaRoot)" Command="yarn install"/>
     <Exec WorkingDirectory="$(MpaRoot)" Command="yarn build"/>
 
-    <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
       <DistFiles Include="$(WWWRoot)dist\**"/>
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
@@ -47,5 +45,5 @@
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </ResolvedFileToPublish>
     </ItemGroup>
-  </Target>
+  </Target> -->
 </Project>

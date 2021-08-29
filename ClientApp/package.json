@@ -36,6 +36,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "lint": "echo lint",
     "watch": "webpack --watch"
   }
 }
